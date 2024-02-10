@@ -1,5 +1,4 @@
 import axios from "axios";
-import {toast} from "react-toastify";
 import {
   loginRequest,
   loginFail,
@@ -26,11 +25,9 @@ export const loginUser = (user) => async (dispatch) => {
     const { data } = await axios.post(`/api/v1/login`, user, {
       headers: { "Content-Type": "application/json" },
     });
-    toast.success("logged In")
     dispatch(loginSuccess(data.user));
   } catch (error) {
     const payload = error.response.data.message;
-    toast.error(payload)
     dispatch(loginFail(payload));
   }
 };
@@ -41,11 +38,9 @@ export const registerUser = (user) => async (dispatch) => {
     const { data } = await axios.post(`/api/v1/register`, user, {
       headers: { "Content-Type": "application/json" },
     });
-    toast.success("User Registered")
     dispatch(registerSuccess(data.user));
   } catch (error) {
     const payload = error.response.data.message;
-    toast.error(payload)
     dispatch(registerFail(payload));
   }
 };
@@ -65,11 +60,9 @@ export const loadUser = () => async (dispatch) => {
 export const logout = () => async (dispatch) => {
   try {
     await axios.get(`/api/v1/logout`);
-    toast.success("Logged Out")
     dispatch(logoutSuccess());
   } catch (error) {
     const payload = error.response.data.message;
-    toast.error(payload)
     dispatch(logoutFail(payload));
   }
 };
@@ -80,11 +73,9 @@ export const updateUser = (user) => async (dispatch) => {
     const { data } = await axios.put(`/api/v1/me/update`, user, {
       headers: { "Content-Type": "application/json" },
     });
-    toast.success("Profile Updated")
     dispatch(updateSuccess(data.success));
   } catch (error) {
     const payload = error.response.data.message;
-    toast.error(payload)
     dispatch(updateFail(payload));
   }
 };
@@ -97,11 +88,9 @@ export const updatePassword = (passwords) => async (dispatch) => {
     const { data } = await axios.put(`/api/v1/password/update`, passwords, {
       headers: { "Content-Type": "application/json" },
     });
-    toast.success("Password Update")
     dispatch(updatePasswordSuccess(data.success));
   } catch (error) {
     const payload = error.response.data.message;
-    toast.error(payload)
     dispatch(updatePasswordFail(payload));
   }
 };

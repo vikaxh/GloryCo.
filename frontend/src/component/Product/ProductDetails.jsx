@@ -66,7 +66,15 @@ const ProductDetails = () => {
   }, [dispatch, params,reviewError,success]);
 
   const addToCartHandler = () => {
-    dispatch(addItemsTocart(id, quantity));
+    const data = {
+      product: product._id,
+      name: product.name,
+      price: product.price,
+      image: product.images[0].url,
+      stock: product.stock,
+    };
+    
+    dispatch(addItemsTocart(data,quantity));
   };
 
   const options = {

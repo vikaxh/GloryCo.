@@ -17,21 +17,22 @@ const Cart = () => {
   const dispatch = useDispatch();
   const { cartItems, loading } = useSelector((state) => state.cart);
 
-  const increaseQuantity = (id, quantity, stock) => {
-    const newQty = quantity + 1;
-    if (stock <= quantity) {
+  const increaseQuantity = (item) => {
+
+    const newQty = item.quantity + 1;
+    if (item.stock <= item.quantity) {
       return;
     }
-    dispatch(addItemsTocart(id, newQty));
+    dispatch(addItemsTocart(item, newQty));
   };
 
-  const decreaseQuantity = (id, quantity) => {
-    const newQty = quantity - 1;
-    if (1 >= quantity) {
+  const decreaseQuantity = (item) => {
+    const newQty = item.quantity - 1;
+    if (1 >= item.quantity) {
       return;
     }
 
-    dispatch(removeItemsFromCart(id, newQty));
+    dispatch(addItemsTocart(item, newQty));
   };
 
   const deleteCartItems = (id) => {
@@ -69,6 +70,7 @@ const Cart = () => {
                   {cartItems &&
                     cartItems.map((item) => (
                       <div className="cartContainer" key={item.product}>
+                      
                         <CartItemCard
                           item={item}
                           deleteCartItems={deleteCartItems}
@@ -76,7 +78,7 @@ const Cart = () => {
                         <div className="cartInput">
                           <button
                             onClick={() =>
-                              decreaseQuantity(item.product, item.quantity)
+                              decreaseQuantity(item)
                             }
                           >
                             -
@@ -85,9 +87,7 @@ const Cart = () => {
                           <button
                             onClick={() =>
                               increaseQuantity(
-                                item.product,
-                                item.quantity,
-                                item.stock
+                                item,
                               )
                             }
                           >
