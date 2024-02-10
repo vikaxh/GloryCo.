@@ -33,7 +33,7 @@
     justify-content: center;
   }
   .dashboardSummary > div > p {
-    background-color: rgba(70, 117, 218, 0.932);
+    background-color: rgba(38, 84, 182, 0.932);
     color: white;
     font: 300 1.3rem "Roboto";
     text-align: center;
@@ -56,10 +56,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border: 2px  solid;
   }
   
   .dashboardSummaryBox2 > a:first-child {
-    background-color: rgb(255, 110, 110);
+    background-color: rgb(246, 18, 18);
     color: rgb(255, 255, 255);
   }
   

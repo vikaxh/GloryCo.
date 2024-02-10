@@ -1,10 +1,12 @@
 footer {
     padding: 2vmax;
-    background-color: rgb(34, 33, 33);
+    background-color: rgb(0, 0, 0);
     color: white;
     display: flex;
     align-items: center;
     padding-top: 5vmax;
+
+    
   }
   
   .leftFooter {
@@ -37,8 +39,8 @@ footer {
   
   .midFooter > h1 {
     font-size: 4vmax;
-    font-family: "Roboto";
-    color: rgb(241, 109 , 18);
+    font-family: 'Protest Revolution';
+    color: rgb(50, 16, 92);
   }
   .midFooter > p {
     max-width: 60%;
@@ -68,5 +70,5 @@ footer {
   }
   
   .rightFooter > a:hover {
-    color: rgb(241, 109 , 18);
+    color: rgb(50, 16, 92);
   }

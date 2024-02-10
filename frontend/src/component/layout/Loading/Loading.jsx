@@ -8,7 +8,7 @@ const Loading = () => {
         <Oval
             height={80}
             width={80}
-            color="#d4473d"
+            color="rgb(50, 16, 92)"
             wrapperStyle={{}}
             wrapperClass=""
             visible={true}

@@ -12,17 +12,17 @@ import { Typography } from "@mui/material";
 import Pagination from "react-js-pagination";
 
 const categories = [
-  "Sandals",
-  "Slippers",
-  "Sneakers",
-  "Boots",
-  "Formals",
-  "Sports",
-  "Heels",
+  "Serum",
+  "Cream",
+  "Oil",
+  "Soap",
+  "Shampoo",
+  "Lotion",
+  "Utensils",
 ];
 
 const Products = () => {
-  const [price, setPrice] = useState([0, 100000]);
+  const [price, setPrice] = useState([0, 1000]);
   const [category, setCategory] = useState("");
   const [currentPage , setCurrentPage] = useState(1);
   const [ratings, setRatings] = useState(0);
@@ -69,12 +69,12 @@ const Products = () => {
               value={price}
               onChange={priceHandler}
               valueLabelDisplay="auto"
-              aria-labelledby="range-slider"
+              aria-labelledby="continuous-slider"
               min={0}
-              max={25000}
+              max={1000}
               size="small"
               style={{
-                color: 'tomato', 
+                color: 'rgb(50, 16, 92)', 
               }}
             />
 
@@ -102,7 +102,7 @@ const Products = () => {
                 max={5}
                 size="small"
                 style={{
-                  color: 'tomato', 
+                  color: 'rgb(50, 16, 92)', 
                 }}
               />
 

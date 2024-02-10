@@ -56,12 +56,10 @@ const ProductDetails = () => {
   useEffect(() => {
     
     if (reviewError) {
-      alert(reviewError);
       dispatch(clearErrors());
     }
 
     if (success) {
-      alert("Review Submitted Successfully");
       dispatch(createReviewStatusReset());
     }
     dispatch(getProductDetails(params));

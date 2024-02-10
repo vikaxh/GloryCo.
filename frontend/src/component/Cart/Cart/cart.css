@@ -10,7 +10,7 @@
   }
   .emptyCart > svg {
     font-size: 5vmax;
-    color:rgb(241, 109 , 18);
+    color:rgb(50, 16, 92);
   }
   .emptyCart > p {
     font-size: 2vmax;
@@ -30,7 +30,7 @@
   }
   
   .cartHeader {
-    background-color: rgb(241, 109 , 18);
+    background-color :rgb(50, 16, 92);
     width: 90%;
     box-sizing: border-box;
     margin: auto;
@@ -40,6 +40,7 @@
     font: 300 0.7vmax "Roboto";
   }
   .cartHeader > p {
+    font-size: 1rem;
     margin: 10px;
   }
   .cartHeader > p:last-child {
@@ -97,7 +98,7 @@
   }
   
   .cartGrossProfitBox {
-    border-top: 3px solid rgb(241, 109 , 18);
+    border-top: 3px solid rgb(50, 16, 92);
     margin: 1vmax 4vmax;
     box-sizing: border-box;
     padding: 2vmax 0;
@@ -111,18 +112,28 @@
     justify-content: flex-end;
   }
   .checkOutBtn > button {
-    background-color: rgb(241, 109 , 18);
+    background-color: rgb(50, 16, 92);
     color: white;
     border: none;
     padding: 0.8vmax 4vmax;
     width: 50%;
-    font: 300 0.8vmax "Roboto";
+    font: 300 1rem "Roboto";
     margin: 1vmax 4vmax;
     cursor: pointer;
     border-radius: 30px;
   }
   
   @media screen and (max-width: 600px) {
+
+    .emptyCart > svg {
+      font-size: 8vmax;
+    }
+    .emptyCart > p {
+      font-size: 3vmax;
+    }
+    .emptyCart > a {
+      font-size: 2.5vmax;
+    }
     .cartPage {
       padding: 0;
       min-height: 60vh;

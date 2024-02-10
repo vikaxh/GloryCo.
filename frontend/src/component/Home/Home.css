@@ -1,5 +1,5 @@
 .banner {
-  background-image: url("../../images/background-logo-1.png");
+  background-image: url("../../images/pexels-ryan-peck-10388882.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size:cover;
@@ -102,7 +102,7 @@
 
 .productCard > span {
   margin: 0.5vmax;
-  color: rgb(241, 109 , 18);
+  color: rgb(50, 16, 92);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 1vmax;
 }

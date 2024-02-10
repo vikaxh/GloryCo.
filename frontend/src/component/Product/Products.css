@@ -58,7 +58,7 @@
 }
 
 .pageItemActive {
-  background-color: rgb(241, 109 , 18);
+  background-color: rgb(50, 16, 92);
 }
 
 .pageLinkActive {
@@ -69,7 +69,9 @@
   width: 10vmax;
   position: absolute;
   top: 10vmax;
-  left: 4vmax;
+  left: 3.5vmax;
+  padding: 1vmax;
+  border: 0.2px solid  rgb(50, 16, 92);
 }
 
 .categoryBox {
@@ -98,7 +100,7 @@
   .category-link:hover {
     padding-left: 1vmax;
     border-radius: 4px;
-    background-color: tomato  ;
+    background-color: rgb(50, 16, 92) ;
     color: white;
     transform: scale(1.5);
   }

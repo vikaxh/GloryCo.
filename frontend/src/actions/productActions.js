@@ -1,4 +1,5 @@
 import axios from "axios";
+import {toast} from 'react-toastify'
 import {
   allProductRequest,
   allProductFail,
@@ -37,6 +38,7 @@ export const getProducts =
   (keyword = "", currentPage = 1, price = [0, 100000], category, ratings = 0) =>
   async (dispatch) => {
     try {
+      
       dispatch(allProductRequest());
       let link = `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${price[0]}&price[lte]=${price[1]}&ratings[gte]=${ratings}`;
 
@@ -56,6 +58,7 @@ export const getProducts =
       dispatch(allProductSucces(data));
     } catch (error) {
       const payload = error.response.data.message;
+      toast.error(payload)
       dispatch(allProductFail(payload));
     }
   };
@@ -68,6 +71,7 @@ export const getAdminProducts = () => async (dispatch) => {
     dispatch(allAdminProductSucces(data));
   } catch (error) {
     const payload = error.response.data.message;
+    toast.error(payload)
     dispatch(allAdminProductFail(payload));
   }
 };
@@ -85,10 +89,10 @@ export const createNewProduct = (productData) => async (dispatch) => {
       productData,
       config
     );
-
     dispatch(createProductSuccess(data));
   } catch (error) {
     const payload = error.response.data.message;
+    toast.error(payload)
     dispatch(createProductFail(payload));
   }
 };
@@ -113,6 +117,7 @@ export const deleteProduct = (id) => async (dispatch) => {
     const { data } = await axios.delete(`/api/v1/admin/product/${id}`);
 
     dispatch(deleteProductSuccess(data.success));
+    toast.success("Product delete successfully")
   } catch (error) {
     const payload = error.response.data.message;
     dispatch(deleteProductFail(payload));
@@ -149,7 +154,7 @@ export const newReview = (reviewData) => async (dispatch) => {
     };
 
     const { data } = await axios.put(`/api/v1/review`, reviewData, config);
-
+    toast.success("Reviwe Added")
     dispatch(createReviewSuccess(data.success));
   } catch (error) {
     const payload = error.response.data.message;

@@ -19,7 +19,7 @@ const Search = () => {
       <form className="searchBox" onSubmit={searchSubmitHandler}>
         <input
           type="text"
-          placeholder="FIND YOU PERFECT PAIR"
+          placeholder="FIND YOUR PERFECT SKINCARE"
           onChange={(event) => setKeyword(event.target.value)}
         />
         <input type="submit" value="Search" />

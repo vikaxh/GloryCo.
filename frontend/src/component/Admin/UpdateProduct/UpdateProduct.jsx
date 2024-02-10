@@ -15,7 +15,7 @@ import { clearErrors } from "../../../reducers/Error Slice/ErrorSlice.js";
 import { useParams } from "react-router-dom";
 import { getProductDetails } from "../../../actions/productActions.js";
 import Loading from "../../layout/Loading/Loading.jsx";
-
+import {toast} from 'react-toastify'
 const UpdateProduct = ({ history, match }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -41,13 +41,13 @@ const UpdateProduct = ({ history, match }) => {
   const [imagesPreview, setImagesPreview] = useState([]);
 
   const categories = [
-    "Sandals",
-    "Slippers",
-    "Sneakers",
-    "Boots",
-    "Formals",
-    "Sports",
-    "Heels",
+    "Serum",
+    "Cream",
+    "Oil",
+    "Soap",
+    "Shampoo",
+    "Lotion",
+    "Utensils",
   ];
 
 
@@ -74,7 +74,7 @@ const UpdateProduct = ({ history, match }) => {
     }
 
     if (isUpdated) {
-      alert("Product Updated Successfully");
+      toast.success("Product Updated Successfully")
       navigate("/admin/products");
       dispatch(updateProductStatusReset());
     }

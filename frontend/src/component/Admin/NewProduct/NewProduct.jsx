@@ -14,6 +14,7 @@ import SideBar from "../Sidebar/Sidebar";
 import { createProductUpdateReset } from "../../../reducers/Product Slice/createProductSlice";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../layout/Loading/Loading";
+import { toast } from 'react-toastify';
 const NewProduct = () => {  
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -28,21 +29,22 @@ const NewProduct = () => {
   const [images, setImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
 
+
   const categories = [
-    "Sandals",
-    "Slippers",
-    "Sneakers",
-    "Boots",
-    "Formals",
-    "Sports",
-    "Heels",
+    "Serum",
+    "Cream",
+    "Oil",
+    "Soap",
+    "Shampoo",
+    "Lotion",
+    "Utensils",
   ];
 
   useEffect(() => {
     
 
     if (success) {
-      alert("Product Created Successfully");
+      toast.success("Product Create Successfully")
       navigate("/admin/dashboard");
       dispatch(createProductUpdateReset());
     }
@@ -63,13 +65,11 @@ const NewProduct = () => {
       myForm.append("images", image);
     });
 
-    console.log(images)
-    console.log(typeof(images))
     dispatch(createNewProduct(myForm));
   };
 
   const createProductImagesChange = (event) => {
-    const files = Array.from(event.target.files).slice(0, 2);
+    const files = Array.from(event.target.files)
 
     setImages([]);
     setImagesPreview([]);

@@ -1,12 +1,13 @@
     .searchBox{
     display: flex;
+
     width: 45%;
 }
 
 .searchBox > input[type="text"]{
     border-radius: 10px 0px 0px 10px;
     width: 70%;
-    border: 1px solid rgb(241, 109 , 18);
+    border: 1px solid rgb(50, 16, 92);
     font-family: 'Roboto';
     font-size: 1vmax;
     padding: 1vmax 2vmax;
@@ -18,20 +19,20 @@
     color: white;
     width: 30%; 
     border: none;
-    background-color: rgb(241, 109 , 18);
+    background-color:rgb(50, 16, 92);
     font-family: 'Roboto';
     font-size: 1.2vmax;
 }
 
 .searchBox > input[type="submit"]:hover {
-    background-color: rgb(198, 54, 0) 
+    background-color: rgb(25, 7, 47) 
 }
 
 
 @media  screen and (max-width: 600px) {
     .searchBox{
         display: flex;
-        width: 100%;
+        width: 70%;
         height: 70%;
     }
 

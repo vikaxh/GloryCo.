@@ -9,7 +9,7 @@ function ProductCard({product}) {
   const options = {
     edit : false,
     color : "rgba(20,20,20,0.1)",
-    activeColor: "tomato",
+    activeColor: 'rgb(50, 16, 92)',
     size: window.innerWidth < 600 ? 20 : 22,
     value:product.ratings,
     isHalf:true

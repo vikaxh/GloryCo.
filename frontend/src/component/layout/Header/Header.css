@@ -17,11 +17,17 @@
   width: 100%;
 }
 
-.logo {
+.logo-section{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  justify-content: center;
   cursor: pointer;
-  width: 8vmax;
-  height: 5vmax;
+  font-size: 2.2rem;
+  font-family: 'Protest Revolution';
+  color: rgb(50, 16, 92);
   object-fit: cover;
+  
 }
 
 .nav-links {
@@ -38,7 +44,7 @@
 }
 
 .linkStyle:hover {
-  color: rgb(241, 109 , 18);
+  color:rgb(50, 16, 92);
   text-decoration: none;
 }
 
@@ -54,15 +60,13 @@
   width: 56px;
   height: 56px;
   border-radius: 100%;
-  border: 2px solid rgb(241, 109 , 18);
+  border: 2px solid rgb(50, 16, 92);
   object-fit: cover;
 }
 
 .ham,#ham{
   display: none;
 }
-
-
 
 
 @media  screen and (max-width: 600px) {
@@ -72,8 +76,6 @@
   }
 
   .logo {
-    width: 8vmax;
-    height: 8vmax;
     margin-right: 1vmax;
   }
 
@@ -97,8 +99,9 @@
     flex-direction: column;
     position: absolute;
     right: 1vmax;
+    margin-top: 3vmax;
     top: 6vmax;
-    background-color: rgb(241, 109 , 18);
+    background-color: rgb(50, 16, 92);
     width: 40%;
     height: 30vmax;
     border-radius: 5px;

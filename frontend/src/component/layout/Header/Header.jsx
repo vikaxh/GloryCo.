@@ -6,6 +6,7 @@ import "../../layout/Header/Header.css";
 import PersonIcon from "@mui/icons-material/Person";
 import { useSelector } from "react-redux/es/hooks/useSelector.js";
 import MenuIcon from "@mui/icons-material/Menu";
+import ShoppingCartIcon from "@mui/icons-material/RemoveShoppingCart";
 import CloseIcon from '@mui/icons-material/Close';
 
 const Header = () => {
@@ -16,7 +17,7 @@ const Header = () => {
   return (
     <div className="header-section">
       <div onClick={() => navigate("/")} className="logo-section">
-        <img className="logo" src={logo} alt="img can't load please referesh" />
+        <h2>GC</h2>
       </div>
       <Search />
       <div className={`nav-links ${checked ? `hamburgerActive` : `hamburger`}`}>

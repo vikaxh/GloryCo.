@@ -23,7 +23,7 @@
 
 .email-input , .password-input , .name-input{
     color: black;
-    border: 2px solid rgb(241, 109 , 18);
+    border: 2px solid rgb(50, 16, 92);
     border-radius: 5px;   
     font-size: 1.2rem;
     padding: 1vmax 2vmax;
@@ -37,7 +37,7 @@
     position: relative;
     padding: 1rem 2rem;
     font-size: 1.5vmax;
-    border: 2px solid rgb(241, 109 , 18);
+    border: 2px solid rgb(50, 16, 92);
     border-radius: 5px;
     cursor: pointer;   
     z-index: 1;
@@ -51,7 +51,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgb(241, 109 , 18);
+    background-color: rgb(50, 16, 92);
     border: 2px solid white;
     transform-origin: left;
     transform: scaleX(0);
@@ -86,7 +86,7 @@
     width: 56px;
     height: 56px;
     border-radius: 100%;
-    border: 2px solid rgb(241, 109 , 18);
+    border: 2px solid rgb(50, 16, 92);
     object-fit: cover;
 }
 

@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Loading from "../../layout/Loading/Loading";
 import MetaData from "../../layout/Helmets/MetaData";
+
 const Login = () => {
   const [user, setUser] = useState({ email: "", password: "" });
 

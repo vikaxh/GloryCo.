@@ -35,6 +35,8 @@ import NewProduct from "./component/Admin/NewProduct/NewProduct.jsx";
 import UpdateProduct from "./component/Admin/UpdateProduct/UpdateProduct.jsx";
 import OrderList from "./component/Admin/OrderList/OrderList.jsx";
 import ProcessOrder from "./component/Admin/ProcessOrder/ProcessOrder.jsx";
+import {ToastContainer} from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   const dispatch = useDispatch();
   const [stripeApiKey, setStripeApiKey] = useState("");
@@ -64,6 +66,7 @@ function App() {
       {isAuthenticated && <UserOptions user={user} />}
 
       <ScrollToTop />
+      <ToastContainer position="bottom-center" />
       <Routes>
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Home />} />
@@ -108,6 +111,7 @@ function App() {
 
       </Routes>
       <Footer></Footer>
+      
     </Router>
   );
 }

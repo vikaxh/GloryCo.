@@ -16,6 +16,7 @@ const Register = ()=> {
     password: "",
     avatar: "",
   });
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

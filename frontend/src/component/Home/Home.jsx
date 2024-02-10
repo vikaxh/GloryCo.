@@ -55,7 +55,7 @@ function Home() {
             loading ? <Loading/> : <Fragment>
             <MetaData title={"Home"}></MetaData>
             <div className='banner'>
-                <p>Welcome to Shoolala</p>
+                <p>Welcome to Glory Co.</p>
                 <h1>FIND AMAZING PRODUCTS BELOW</h1>
     
                 <a href="#container">

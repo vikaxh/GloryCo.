@@ -31,7 +31,7 @@ const Cart = () => {
       return;
     }
 
-    dispatch(addItemsTocart(id, newQty));
+    dispatch(removeItemsFromCart(id, newQty));
   };
 
   const deleteCartItems = (id) => {
