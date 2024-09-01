@@ -27,15 +27,29 @@ const Carousel = ({ images }) => {
 }, [currentSlide , images]);
   return (
     <div className="carousel">
-      <div className="carousel-1">
-        {images && (
-          <img
-            className="CarouselImage"
-            key={images[currentSlide]._id}
-            src={images[currentSlide].url}
-            alt="not found"
-          />
-        )}
+      <div className="carousel-1"
+      style={{width: "100%", 
+      height:"100%", 
+      display: "flex",
+      alignItems:"center"
+    }}
+      >
+
+      <div 
+      style={{width: "60%", 
+      height:"auto",
+      display: "flex", 
+      border: "3px solid red",
+      overflow:"hidden"
+      }}>
+        {images && 
+          images.map( i =>(
+            <img key={i.id} src={i.url} className='img-slider' 
+            style={{translate: `${-100 * currentSlide}%`}}
+            />
+          ))
+        }
+        </div>
       </div>
 
 
