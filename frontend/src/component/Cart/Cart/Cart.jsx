@@ -11,6 +11,7 @@ import RemoveShoppingCartIcon from "@mui/icons-material/RemoveShoppingCart";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "../../layout/Loading/Loading.jsx";
 import MetaData from "../../layout/Helmets/MetaData.jsx";
+import {toast} from  'react-toastify'
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -35,8 +36,10 @@ const Cart = () => {
     dispatch(addItemsTocart(item, newQty));
   };
 
-  const deleteCartItems = (id) => {
+  const deleteCartItems = (name ,id) => {
     dispatch(removeItemsFromCart(id));
+    toast.warning(name+" removed from cart")
+    
   };
 
   const checkoutHandler = () => {

@@ -9,13 +9,20 @@ const userSlice = createSlice({
   reducers: {
     loginRequest: (state, action) => {
       state.loading = true;
+      state.isVerified = false;
       state.isAuthenticated = false;
     },
 
     loginSuccess: (state, action) => {
       state.loading = false;
       state.isAuthenticated = true;
+      state.isVerified = false;
       state.user = action.payload;
+    },
+
+    verifySucess: (state) =>{
+      state.loading = false;
+      state.isVerified = true;
     },
 
     loginFail: (state, action) => {
@@ -27,11 +34,13 @@ const userSlice = createSlice({
     registerRequest: (state, action) => {
       state.loading = true;
       state.isAuthenticated = false;
+      state.isVerified = false;
     },
 
     registerSuccess: (state, action) => {
       state.loading = false;
       state.isAuthenticated = true;
+      state.isVerified = false;
       state.user = action.payload;
     },
 
@@ -108,6 +117,7 @@ export const {
   loginSuccess,
   loginFail,
   loginRequest,
+  verifySucess,
   registerSuccess,
   registerFail,
   registerRequest,

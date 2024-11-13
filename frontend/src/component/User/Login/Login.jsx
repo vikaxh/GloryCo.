@@ -18,7 +18,7 @@ const Login = () => {
   const { isAuthenticated, loading } = useSelector((state) => state.user);
   const redirect = location.search ? location.search.split("=")[1] : "account";
   useEffect(() => {
-    if (isAuthenticated) {
+    if (isAuthenticated ) {
       navigate(`/${redirect}`);
     }
   }, [redirect, isAuthenticated, navigate]);

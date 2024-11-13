@@ -42,7 +42,15 @@ const userSchema = new mongoose.Schema({
     },
     resetPasswordExpire:{
         type:Date
-    }
+    },
+    verified: {
+        type: Boolean,
+        default: false,
+      },
+      otp: Number,
+      otp_expiry: Date,
+      resetPasswordOTP: Number,
+      resetPasswordOtpExpiry: Date,
 
 });
 // event listner

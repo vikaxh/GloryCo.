@@ -69,9 +69,10 @@ const Products = () => {
               value={price}
               onChange={priceHandler}
               valueLabelDisplay="auto"
-              aria-labelledby="continuous-slider"
+              aria-labelledby="range-slider"
               min={0}
-              max={1000}
+              max={25000}
+              defaultValue={5000}
               size="small"
               style={{
                 color: 'rgb(50, 16, 92)', 

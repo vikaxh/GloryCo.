@@ -5,15 +5,57 @@ const sendToken = require("../utils/jwtToken");
 
 exports.registerUser = catchAsyncErrors(async(req,res,next) => {
     const {email , name , password , avatar} = req.body;
-    console.log(avatar);
-    const user = await User.create({
+
+    let user = await User.findOne({ email });
+
+    if (user) {
+      return res
+        .status(400)
+        .json({ success: false, message: "User already exists" });
+    }
+
+    const otp = Math.floor(Math.random() * 100000); 
+    
+     user = await User.create({
         name,
         email,
         password,
         avatar,
+        otp,
+        otp_expiry: new Date(Date.now() + process.env.OTP_EXPIRE* 60 * 1000)
     });
-    sendToken(user,201,res);
+
+    // await sendMail(email, "Verify your account", `Your OTP is ${otp}`);
+    sendToken(user,201,res,"OTP sent to your email, please verify your account");
 });
+
+
+exports.verify = catchAsyncErrors(async(req, res, next) =>{
+    try {
+        console.log("check",req.body);
+        const otp = Number(req.body.otp);
+        const user = await User.findById(req.body._id);
+        console.log(user);
+        if (user.otp !== otp || user.otp_expiry < Date.now()) {
+          return res.status(400).json({
+            success: false,
+            message: "Invalid OTP or has been expired",
+          });
+        }
+        user.verified = true;
+        user.otp = null;
+        user.otp_expiry = null;
+    
+        await user.save();
+        sendToken(user,200, res,  "Account Verified");
+      } catch (error) {
+        res.status(500).json({
+          success: false,
+          message: error.message,
+        });
+      }
+})
+
 
 exports.loginUser = catchAsyncErrors(async(req,res,next) => {
     const{email,password} = req.body;

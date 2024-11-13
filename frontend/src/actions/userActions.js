@@ -17,6 +17,7 @@ import {
   updatePasswordRequest,
   updatePasswordSuccess,
   updatePasswordFail,
+  verifySucess,
 } from "../reducers/User Slice/UserSlice";
 
 export const loginUser = (user) => async (dispatch) => {
@@ -31,6 +32,19 @@ export const loginUser = (user) => async (dispatch) => {
     dispatch(loginFail(payload));
   }
 };
+
+export const verifyUser=(_id, otp) => async (dispatch) => {
+  try {
+         const temp = { _id, otp}
+    const {data} = await axios.put(`/api/v1/verify`,temp ,{
+       headers: { "Content-Type": "application/json" },
+    })
+    dispatch(verifySucess())
+  } catch (error) {
+    const payload = error.response.data.message;
+    
+  }
+}
 
 export const registerUser = (user) => async (dispatch) => {
   try {
@@ -79,8 +93,6 @@ export const updateUser = (user) => async (dispatch) => {
     dispatch(updateFail(payload));
   }
 };
-
-
 
 export const updatePassword = (passwords) => async (dispatch) => {
   try {

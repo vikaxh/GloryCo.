@@ -8,19 +8,20 @@ const app = express();
 const path = require("path");
 
 
+
 app.use(cors());
 app.use(cookieParser());
 app.use(fileUpload());
 app.use(express.json({
-    limit: '100mb'
-  }));
+  limit: '100mb'
+}));
 
 
 
-  if (process.env.NODE_ENV !== "PRODUCTION") {
-    require("dotenv").config({ path: "backend/config/config.env" });
-  }
-  
+if (process.env.NODE_ENV !== "PRODUCTION") {
+  require("dotenv").config({ path: "backend/config/config.env" });
+}
+
 
 
 
@@ -35,16 +36,17 @@ app.use("/api/v1/",user);
 app.use("/api/v1/",order);
 app.use("/api/v1/",payment);
 
-app.use(express.static(path.join(__dirname, "../frontend/build")));
+// app.use(express.static(path.join(__dirname, "../frontend/build")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
-});
-
-
-
-// Middleware for errors
-app.use(errorMiddleware);
-
-module.exports = app;
-
+// app.get("*", (req, res) => {
+  //   res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+  // });
+  
+  
+  
+  // Middleware for errors
+  app.use(errorMiddleware);
+  
+  module.exports = app;
+  
+  

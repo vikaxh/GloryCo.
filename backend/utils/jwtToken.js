@@ -1,5 +1,5 @@
 const sendToken = (user , statusCode , res)=>{
-    const token = user.getJWTTOKEN();
+ const token = user.getJWTTOKEN();
 
     // OPTIONS FOR COKKIES 
     const options = {

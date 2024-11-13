@@ -1,4 +1,4 @@
-.Login-container , .Register-container{
+.Login-container , .Register-container, .verify-container{
     margin: 0 auto;
     min-height: 80vh;
 }

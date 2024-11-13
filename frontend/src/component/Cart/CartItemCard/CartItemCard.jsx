@@ -10,7 +10,7 @@ const CartItemCard = ({item , deleteCartItems}) => {
     <div>
       <Link to={`/product/${item.product}`}>{item.name}</Link>
       <span>{`Price: ₹${item.price}`}</span>
-      <p onClick={() => deleteCartItems(item.product)}>remove</p>
+      <p onClick={() => deleteCartItems(item.name ,item.product)}>remove</p>
     </div>
    </div>
   )

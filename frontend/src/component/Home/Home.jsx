@@ -32,7 +32,7 @@ function Home() {
         try {
           if (
             window.innerHeight + document.documentElement.scrollTop + 1 >=
-            document.documentElement.scrollHeight
+            document.documentElement.scrollHeight-200
           ) {
             
             setCurrentPage((prev) => prev + 1);

@@ -20,12 +20,17 @@ const Register = ()=> {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { isAuthenticated } = useSelector((state) => state.user);
+  const { isAuthenticated, isVerified } = useSelector((state) => state.user);
   useEffect(() => {
-    if (isAuthenticated) {
+    if (isAuthenticated ) {
+      if (isVerified == false) {
+        navigate("/verify");
+      }
+      else
       navigate("/account");
     }
-  }, [isAuthenticated, navigate]);
+    
+  }, [isAuthenticated, isVerified, navigate]);
 
   const changeHandler = (event) => {
     let { name, value } = event.target;

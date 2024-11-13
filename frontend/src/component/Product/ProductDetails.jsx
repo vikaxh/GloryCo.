@@ -11,6 +11,7 @@ import Loading from "../layout/Loading/Loading";
 import { addItemsTocart } from "../../actions/cartActions";
 import { clearErrors } from "../../reducers/Error Slice/ErrorSlice";
 import { createReviewStatusReset } from "../../reducers/Product Slice/createReviewSlice";
+import {toast} from  'react-toastify'
 
 import {
   Dialog,
@@ -33,8 +34,6 @@ const ProductDetails = () => {
   const { success, error: reviewError } = useSelector(
     (state) => state.createReview
   );
-
-
 
 
   const submitReviewToggle = () => {
@@ -75,6 +74,7 @@ const ProductDetails = () => {
     };
     
     dispatch(addItemsTocart(data,quantity));
+    toast.success(product.name+" added to cart")
   };
 
   const options = {

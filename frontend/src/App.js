@@ -37,6 +37,7 @@ import OrderList from "./component/Admin/OrderList/OrderList.jsx";
 import ProcessOrder from "./component/Admin/ProcessOrder/ProcessOrder.jsx";
 import {ToastContainer} from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
+import Verify from "./component/User/Verify.jsx";
 function App() {
   const dispatch = useDispatch();
   const [stripeApiKey, setStripeApiKey] = useState("");
@@ -75,6 +76,7 @@ function App() {
         <Route path="/products/:keyword" element={<Products />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/verify" element={<Verify />} />
         <Route path="/cart" element={<Cart />} />
 
         <Route element={<ProtectedRoute isAuthenticated={isAuthenticated} />}>
